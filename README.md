@@ -3,6 +3,7 @@
 # Request feature?
 - Kirim saja pesan kepada owner Atau pull requests
 # How to run?
+- git clone https://github.com/natgvlite/weabot
 - cd weabot
 - npm i
 - pm2 start index.js

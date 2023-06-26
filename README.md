@@ -10,8 +10,8 @@
 - pm2 save
 - pm2 logs
 ## Update info
-- Added Converter Menu
-- Added ledrun, sertitolol, bajinganlo, kertas
+- Converter ~> qrgen, barcode, tobase64, base64
+- Added Maker ~> ledrun, sertitolol, bajinganlo, kertas
 ## Thanks To
 * [`Xyro`](https://github.com/xyromawwari)
 * [`Wan`](https://github.com/erhabot)

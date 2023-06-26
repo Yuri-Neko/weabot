@@ -10,8 +10,10 @@
 - pm2 save
 - pm2 logs
 ## Update info
+- Added Downloader ~> mega.nz
 - Converter ~> qrgen, barcode, tobase64, base64
 - Added Maker ~> ledrun, sertitolol, bajinganlo, kertas
+- Added Others ~> cuaca
 ## Thanks To
 * [`Xyro`](https://github.com/xyromawwari)
 * [`Wan`](https://github.com/erhabot)

@@ -1,5 +1,14 @@
-# anu, hasil gabut
-# kalau mau req pitur atau lainnya seputar repo ini bisa langsung cet wangsap saya, saya orang nya terbuka ah ah 😅🙏🏽
-# How to run? ~> cd weabot ~> npm i ~> pm2 start index.js ~> pm2 save ~> pm2 logs
-# update beberapa fitur
-# sekian dan yaudah sih
+# Wea-BOT
+- Bot Whatsapp Multi Function Using NodeJS
+# Request feature?
+- Kirim saja pesan kepada owner Atau pull requests
+# How to run?
+- cd weabot
+- npm i
+- pm2 start index.js
+- pm2 save
+- pm2 logs
+# update info
+- Added Converter Menu
+- Added ledrun, sertitolol, bajinganlo, kertas
+# End And Thank You - 

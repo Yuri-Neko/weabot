@@ -288,7 +288,7 @@ function parseMs(ms) {
     switch (command) {
 case 'menu':
   reply(`
-  Hi, *YanfeiBOT* In Here!
+  Hi, *${botName}* In Here!
   
   • *DOWNLOADER*
     › ${prefix}igdl
@@ -320,6 +320,18 @@ case 'menu':
     › ${prefix}starwars-logo
     › ${prefix}style-logo
     › ${prefix}water-logo
+    › ${prefix}ledrun
+    › ${prefix}bajinganlo
+    › ${prefix}kertas
+    › ${prefix}sertitolol
+
+  • *Converter*
+    › ${prefix}qrgen
+    › ${prefix}barcode
+    › ${prefix}tobase64
+    › ${prefix}base64
+    › ${prefix}tobinary
+    › ${prefix}binary
     
   • *OTHERS*
     › ${prefix}desuinfo
@@ -658,6 +670,54 @@ case 'style-logo':
     }
   }, { quoted: msg });
   break;
+case 'sertitolol':
+  if (!q) {
+    return reply(`Contoh:\n${prefix + command} Yanfei`);
+  }
+  reply(`Tunggu sebentar..`);
+  sock.sendMessage(from, {
+    caption: q,
+    image: {
+      url: `https://mfarels.my.id/api/serti-tolol?text=${q}`
+    }
+  }, { quoted: msg });
+  break;
+case 'kertas':
+  if (!q) {
+    return reply(`Contoh:\n${prefix + command} Yanfei`);
+  }
+  reply(`Tunggu sebentar..`);
+  sock.sendMessage(from, {
+    caption: q,
+    image: {
+      url: `https://mfarels.my.id/api/kertas?text=${q}`
+    }
+  }, { quoted: msg });
+  break;
+case 'bajinganlo':
+  if (!q) {
+    return reply(`Contoh:\n${prefix + command} Yanfei`);
+  }
+  reply(`Tunggu sebentar..`);
+  sock.sendMessage(from, {
+    caption: q,
+    image: {
+      url: `https://mfarels.my.id/api/bajinganlo?text=${q}`
+    }
+  }, { quoted: msg });
+  break;
+case 'ledrun':
+  if (!q) {
+    return reply(`Contoh:\n${prefix + command} Yanfei`);
+  }
+  reply(`Tunggu sebentar..`);
+  sock.sendMessage(from, {
+    caption: q,
+    video: {
+      url: `https://mfarels.my.id/api/led-runningtext?text=${q}`
+    }
+  }, { quoted: msg });
+  break;
 case 'water-logo':
   if (!q) {
     return reply(`Contoh:\n${prefix + command} Yanfei`);
@@ -670,7 +730,83 @@ case 'water-logo':
     }
   }, { quoted: msg });
   break;
-  /* Others */
+  /*converter*/
+  case 'qrgen':
+  if (!q) {
+    return reply(`Contoh:\n${prefix + command} Xyro`);
+  }
+  reply(`Tunggu sebentar..`);
+  sock.sendMessage(from, {
+    image: { url: `https://mfarels.my.id/api/qrcode?text=${q}` },
+    caption: `QR`
+  }, { quoted: msg });
+  break;
+  case 'barcode':
+  if (!q) {
+    return reply(`Contoh:\n${prefix + command} Xyro`);
+  }
+  reply(`Tunggu sebentar..`);
+  sock.sendMessage(from, {
+    image: { url: `https://mfarels.my.id/api/barcode?text=${q}` },
+    caption: `barcode`
+  }, { quoted: msg });
+  break;
+  case 'tobase64':
+    if (!q) {
+      return reply(`Contoh:\n${prefix = command} Xyro`)
+    }
+    const tobase64 = await axios.get(`https://mfarels.my.id/api/base64enc?text=${q}`)
+    const tobase64r = tobase64.data.result
+    reply(tobase64r)
+    break;
+  case 'base64':
+    if (!q) {
+      return reply(`Contoh:\n${prefix + command} Xyro`)
+    }
+    const base64 = await axios.get(`https://mfarels.my.id/api/base64dec?text=${q}`)
+    const base64r = base64.data.result
+    reply(base64r)
+    break;
+  case 'tobinary':
+    if (!q) {
+      return reply(`Contoh:\n${prefix + command} Xyro`)
+    }
+    const tobinary = await axios.get(`https://mfarels.my.id/api/binaryenc?text=${q}`)
+    const tobinaryr = tobinary.data.result
+    reply(tobinaryr)
+    break;
+  case 'tobinary':
+    if (!q) {
+      return reply(`Contoh:\n${prefix + command} Xyro`)
+    }
+    const binary = await axios.get(`https://mfarels.my.id/api/binarydec?text=${q}`)
+    const binaryr = binary.data.result
+    reply(binaryr)
+    break;
+  /*others*/
+  case 'gtwiki':
+  if (!q) {
+    return reply(`Contoh:\n${prefix + command} Purple`);
+  }
+  try {
+    const wikig = await axios.get(`https://violet-narwhal-cap.cyclic.app/api/gtwiki?keyword=${q}`);
+    const data = wikig.data.data;
+    const imageUrl = {
+      url: wikig.data.image
+    };
+    let gata = `Growtopia Wiki\n`;
+    for (const item of data) {
+      gata += `*${item.title}:*\n${item.data}\n\n`;
+    }
+    await sock.sendMessage(from, {
+      image: { url: wikig.data.image },
+      caption: `${gata}*Desc:*\n${wikig.data.description}`,
+    });
+  } catch (error) {
+    console.error(`Error:`, error);
+    reply(`Engror`);
+  }
+  break;
 case 'desuinfo':
   if (!q) {
     return reply(`Contoh:\n${prefix + command} URL`);
@@ -709,29 +845,6 @@ case 'desusearch':
     text: `*Search results for ${q}*\n\n${searchResultsText}`,
     quoted: msg
   });
-  break;
-case 'gtwiki':
-  if (!q) {
-    return reply(`Contoh:\n${prefix + command} Purple`);
-  }
-  try {
-    const wikig = await axios.get(`https://violet-narwhal-cap.cyclic.app/api/gtwiki?keyword=${q}`);
-    const data = wikig.data.data;
-    const imageUrl = {
-      url: wikig.data.image
-    };
-    let gata = `Growtopia Wiki\n`;
-    for (const item of data) {
-      gata += `*${item.title}:*\n${item.data}\n\n`;
-    }
-    await sock.sendMessage(from, {
-      image: { url: wikig.data.image },
-      caption: `${gata}*Desc:*\n${wikig.data.description}`,
-    });
-  } catch (error) {
-    console.error(`Error:`, error);
-    reply(`Engror`);
-  }
   break;
 case 'infogempa':
   const { result } = await clph.info.gempa();
@@ -774,9 +887,16 @@ case 'owner':
   });
   break;
 case 'shortlink':
-  if (!q) return reply(`Contoh:\n${prefix + command} URL`);
+  if (!q) {
+    return reply(`Contoh:\n${prefix + command} URL`);
+  }
+  reply(`Tunggu Sebentar..`);
   const shortUrl = await shortlink(q);
-  reply(shortUrl);
+  const urlqr = await axios.get(`https://mfarels.my.id/api/qrcodev2?text=${shortUrl}`)
+  sock.sendMessage(from, {
+    image: { url: urlqr.data.result },
+    caption: `${shortUrl}`
+  }) 
   break;
 case 'ssweb':
   if (!q) {
@@ -876,3 +996,5 @@ if (body.startsWith('<')) {
    })
 }
 start();
+
+/** Thanks For USing **/

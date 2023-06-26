@@ -1,15 +1,17 @@
-# Wea-BOT
+## Wea-BOT
 - Bot Whatsapp Multi Function Using NodeJS
-# Request feature?
+## Request feature?
 - Kirim saja pesan kepada owner Atau pull requests
-# How to run?
+## How to run?
 - git clone https://github.com/natgvlite/weabot
 - cd weabot
 - npm i
 - pm2 start index.js
 - pm2 save
 - pm2 logs
-# update info
+## Update info
 - Added Converter Menu
 - Added ledrun, sertitolol, bajinganlo, kertas
-# End And Thank You - 
+## Thanks To
+* [`Xyro`](https://github.com/xyromawwari)
+* [`Wan`](https://github.com/erhabot)

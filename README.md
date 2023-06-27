@@ -20,7 +20,7 @@
 - Added Downloader ~> mega.nz
 - Converter ~> qrgen, barcode, tobase64, base64
 - Added Maker ~> ledrun, sertitolol, bajinganlo, kertas
-- Added Others ~> cuaca
+- Added Others ~> cuaca, chatgpt get apikey on website https://api.lolhuman.xyz/
 
 ## Thanks To
 

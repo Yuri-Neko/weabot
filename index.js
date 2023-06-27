@@ -695,7 +695,7 @@ case 'joebiden':
   fakeSend(`\nTunggu sebentar..\n`);
   sock.sendMessage(from, {
     caption: q,
-    video: {
+    image: {
       url: `https://api-xcoders.site/api/maker/biden?text=${q}&apikey=${xcoders}`
     }
   }, { quoted: msg });

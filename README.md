@@ -8,7 +8,7 @@
 - pm2 save
 - pm2 logs
 ## Group WhatsApp Update Info
-* [`WhatsApp Group`](https://chat.whatsapp.com/FDzGjJoBCCh9gHoM4TnZut)
+* [`WhatsApp Group`](https://chat.whatsapp.com/BrFT5vjjm310tBgfNAxSjG)
 ## Thanks To
 * [`Xyro`](https://github.com/xyromawwari)
 * [`Wan`](https://github.com/erhabot)

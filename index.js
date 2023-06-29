@@ -695,7 +695,7 @@ case 'kertas':
   if (!q) {
     return reply(`Contoh:\n${prefix + command} Love You`);
   }
-  fakesSend(`\nTunggu sebentar..\n`);
+  fakeSend(`\nTunggu sebentar..\n`);
   sock.sendMessage(from, {
     caption: q,
     image: {
@@ -707,7 +707,7 @@ case 'bajingan':
   if (!q) {
     return reply(`Contoh:\n${prefix + command} Wahyu`);
   }
-  fakesSend(`\nTunggu sebentar..\n`);
+  fakeSend(`\nTunggu sebentar..\n`);
   sock.sendMessage(from, {
     caption: q,
     image: {
@@ -719,7 +719,7 @@ case 'woi':
   if (!q) {
     return reply(`Contoh:\n${prefix + command} Woi Dek`);
   }
-  fakesSend(`\nTunggu sebentar..\n`);
+  fakeSend(`\nTunggu sebentar..\n`);
   sock.sendMessage(from, {
     caption: q,
     image: {
@@ -755,7 +755,7 @@ case 'ledrun':
   if (!q) {
     return reply(`Contoh:\n${prefix + command} Yanfei WhatsApp Bot`);
   }
-  fakesSend(`\nTunggu sebentar..\n`);
+  fakeSend(`\nTunggu sebentar..\n`);
   sock.sendMessage(from, {
     caption: q,
     video: {

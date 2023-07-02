@@ -410,7 +410,8 @@ const start = async () => {
     › ${prefix}get - Menampilkan informasi link.
     › ${prefix}infogempa - Menampilkan informasi gempa terkini.
     › ${prefix}owner - Menampilkan informasi pemilik bot.
-	› ${prefix}ping - Menampilkan informasi status bot.
+    › ${prefix}ping - Menampilkan informasi status bot.
+    › ${prefix}runtime - Menampilkan informasi status running bot.
     › ${prefix}shortlink - Memperpendek tautan URL.
     › ${prefix}ssweb - Mengambil tangkapan layar dari situs web.
     › ${prefix}sticker - Mengubah gambar menjadi stiker.

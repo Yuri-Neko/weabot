@@ -6,6 +6,7 @@
     "@adiwajshing/baileys": "github:WhiskeySockets/Baileys#master",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@bochilteam/scraper": "^4.2.3",
+    "api-dylux": "^1.5.5",
     "axios": "^0.27.2",
     "caliph-api": "^1.0.0",
     "chalk": "^4.1.0",

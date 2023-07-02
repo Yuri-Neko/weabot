@@ -19,6 +19,7 @@ const moment = require("moment-timezone");
 const formData = require("form-data");
 const ffmpeg = require("fluent-ffmpeg");
 const xfar = require("xfarr-api");
+const dylux = require("api-dylux");
 const path = require("path");
 const fs = require("fs");
 const os = require("os");
@@ -405,6 +406,7 @@ const start = async () => {
     › ${prefix}alkitab - Mencari informasi dalam Alkitab.
     › ${prefix}artinama - Mencari informasi dan arti dari nama kamu.
     › ${prefix}cuaca - Menampilkan informasi cuaca.
+    › ${prefix}chatgpt - Bertanya seputar apa pun kepada ChatGPT.
     › ${prefix}desuinfo - Mencari informasi tentang anime/manga.
     › ${prefix}desusearch - Mencari gambar anime/manga.
     › ${prefix}get - Menampilkan informasi link.
@@ -916,6 +918,15 @@ const start = async () => {
             title: "Cuaca Hari Ini",
           })
         );
+        break;
+      case "chatgpt":
+      case "ai":
+        if (!q) {
+          return reply(`Contoh:\n${prefix + command} Apa itu ChatGPT ?`);
+        }
+        dylux.ChatGpt(q).then((data) => {
+          fakeSend(data.text);
+        });
         break;
       case "desuinfo":
         if (!q) {

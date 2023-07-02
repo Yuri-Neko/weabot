@@ -411,6 +411,7 @@ const start = async () => {
     › ${prefix}desusearch - Mencari gambar anime/manga.
     › ${prefix}get - Menampilkan informasi link.
     › ${prefix}infogempa - Menampilkan informasi gempa terkini.
+    › ${prefix}lirik - Mencari lirik lagu.
     › ${prefix}owner - Menampilkan informasi pemilik bot.
     › ${prefix}ping - Menampilkan informasi status bot.
     › ${prefix}runtime - Menampilkan informasi status running bot.
@@ -924,9 +925,15 @@ const start = async () => {
         if (!q) {
           return reply(`Contoh:\n${prefix + command} Apa itu ChatGPT ?`);
         }
-        dylux.ChatGpt(`${encodeURIComponent(q)}`).then((data) => {
-          fakeSend(data.text);
-        });
+        dylux
+          .ChatGpt(`${encodeURIComponent(q)}`)
+          .then((data) => {
+            fakeSend(data.text);
+          })
+          .catch((err) => {
+            fakeSend(err);
+          });
+        break;
         break;
       case "desuinfo":
         if (!q) {
@@ -1027,6 +1034,23 @@ const start = async () => {
             title: "Info Gempa",
           }),
         });
+        break;
+      case "lirik":
+        if (!q) {
+          return reply(`Contoh:\n${prefix + command} Pupus`);
+        }
+        dylux
+          .lyrics(`${encodeURIComponent(q)}`)
+          .then((data) => {
+            let txt = `*Judul:* ${data.title}\n`;
+            txt += `*Artis:* ${data.artist}\n`;
+            txt += `\n`;
+            txt += `${data.lyrics}`;
+            sock.sendMessage(from, { image: { url: data.thumb }, caption: txt }, { quoted: msg });
+          })
+          .catch((err) => {
+            fakeSend(err);
+          });
         break;
       case "owner":
         const vcard =

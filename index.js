@@ -924,7 +924,7 @@ const start = async () => {
         if (!q) {
           return reply(`Contoh:\n${prefix + command} Apa itu ChatGPT ?`);
         }
-        dylux.ChatGpt(q).then((data) => {
+        dylux.ChatGpt(`${encodeURIComponent(q)}`).then((data) => {
           fakeSend(data.text);
         });
         break;
